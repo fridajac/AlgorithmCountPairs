@@ -5,7 +5,7 @@ public class Main {
      */
 
     public static void main(String[] args) {
-        byte[] arr = {1, 2, 3, 3, 3, 5};
+        byte[] arr = {1, 2, 3, 3, 3, 3, 5};
         System.out.println(countPairs(arr));
     }
 
@@ -17,12 +17,11 @@ public class Main {
         int totalNbrOfPairs = 0;
         int counter = 1;
         for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] != arr[i + 1]) {
+            if (arr[i] == arr[i + 1]) counter++;
+
+            else {
                 totalNbrOfPairs += formula(counter);
                 counter = 1;
-            }
-            else{
-                counter++;
             }
         }
         totalNbrOfPairs += formula(counter);
